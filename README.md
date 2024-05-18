@@ -1,1 +1,1 @@
-An API and website to experiment with TextSummarization
+A website to experiment with TextSummarization
