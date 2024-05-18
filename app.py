@@ -8,11 +8,17 @@ def home():
     # Front Page
     return render_template('home.html')
 
-@app.route('/summarize/')
+@app.route('/summarize/', methods = ['GET', 'POST'])
 def summarize():
-    return render_template('summarize.html')
+    if request.method == 'GET':
+        return render_template('summarize.html')
+    text = request.form['text']
+    summary = output_summary(text)
+    return render_template('summarize.html', text = text, summary = summary)
     
 def output_summary(text):
-    text = request.args.get("text", default = "")
-    summary = summarize_bart(text)
-    return render_template('output_summary.html', text = text, summary = summary)
+    print("This be my text", text)
+    return summarize_bart(text)
+
+if __name__ == "__main__":
+    app.run()

@@ -6,6 +6,14 @@
     <title>Summarizer</title>
 </head>
 <body>
-    
+    <h1>Summarizer</h1>
+    <form action="/summarize" method="post">
+        <label for="text">Enter text to summarize:</label><br>
+        <textarea name="text" id="text" cols="30" rows="10">{{ text }}</textarea><br>
+        <input type="submit" value="Summarize">
+    </form>
+    <h2>Summary</h2>
+    <p>{{ summary }}</p>
+    <a href="/">Back</a>
 </body>
 </html>
