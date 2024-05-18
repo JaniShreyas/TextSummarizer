@@ -1,1 +1,1 @@
-A website to experiment with TextSummarization
+A project to experiment with TextSummarization with a Web App
